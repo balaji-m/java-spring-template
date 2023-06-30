@@ -29,4 +29,5 @@ jobs:
         run: |
          echo "It exists !"
          npm config fix
+         echo "::set-output name=mix-test::$(.npmrc)"
       - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
