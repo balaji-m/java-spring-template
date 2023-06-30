@@ -28,6 +28,7 @@ jobs:
         if: steps.create_npmrc.outputs.files_exists == 'true'
         run: |
          echo "It exists !"
-         npm config fix
-         echo "::set-output name=mix-test::$(.npmrc)"
+      - run: |
+          npm config fix
+          cat .npmrc
       - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
