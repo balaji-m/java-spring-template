@@ -19,6 +19,6 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-      - run: curl -u balaji.m89@gmail.com:AKCp8oi7tkEU36vY9p26e8dJHVwWTkFQ5jGyqASAejmkxZBaqPHH1bm95dJpY5b3QrYNVoqkt https://mbtech.jfrog.io/artifactory/api/npm/auth/
+      - run: curl -s -u balaji.m89@gmail.com:AKCp8oi7tkEU36vY9p26e8dJHVwWTkFQ5jGyqASAejmkxZBaqPHH1bm95dJpY5b3QrYNVoqkt https://mbtech.jfrog.io/artifactory/api/npm/auth/
         name: auth token generation
       - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
