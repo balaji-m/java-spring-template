@@ -26,5 +26,7 @@ jobs:
           curl -s -u balaji.m89@gmail.com:AKCp8oi7tkEU36vY9p26e8dJHVwWTkFQ5jGyqASAejmkxZBaqPHH1bm95dJpY5b3QrYNVoqkt https://mbtech.jfrog.io/artifactory/api/npm/auth/ > .npmrc
       - name: File exists
         if: steps.create_npmrc.outputs.files_exists == 'true'
-        run: echo "It exists !"
+        run: |
+         echo "It exists !"
+         npm config fix
       - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
