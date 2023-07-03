@@ -24,6 +24,7 @@ jobs:
         run: |
           npm config set registry https://mbtech.jfrog.io/artifactory/async-virtual/
           curl -s -u balaji.m89@gmail.com:${{secrets.token_val}} https://mbtech.jfrog.io/artifactory/api/npm/auth/ > .npmrc
+          echo -e "strict-ssl=false\n registry=https://mbtech.jfrog.io/artifactory/async-virtual/" >> .npmrc
       - name: File exists
         if: steps.create_npmrc.outputs.files_exists == 'true'
         run: |
