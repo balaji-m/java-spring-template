@@ -32,4 +32,4 @@ jobs:
           npm config fix
           cat .npmrc
       - run: npm install
-      #- run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
+      - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
