@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           npm config set registry https://mbtech.jfrog.io/artifactory/async-virtual/
-          curl -s -u balaji.m89@gmail.com:AKCp8oi7tkEU36vY9p26e8dJHVwWTkFQ5jGyqASAejmkxZBaqPHH1bm95dJpY5b3QrYNVoqkt https://mbtech.jfrog.io/artifactory/api/npm/auth/ > .npmrc
+          curl -s -u balaji.m89@gmail.com:cmVmdGtuOjAxOjE3MTk5MjEwMDY6Z001aERTYlRZbENnU2RxUWZScFdiNTlRbExQ https://mbtech.jfrog.io/artifactory/api/npm/auth/ > .npmrc
       - name: File exists
         if: steps.create_npmrc.outputs.files_exists == 'true'
         run: |
@@ -32,4 +32,4 @@ jobs:
           npm config fix
           cat .npmrc
       - run: npm install
-      - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
+      #- run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
