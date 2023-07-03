@@ -27,7 +27,7 @@ jobs:
       - name: File exists
         if: steps.create_npmrc.outputs.files_exists == 'true'
         run: |
-         echo "It exists !"
+         echo "It exists!"
       - run: |
           npm config fix
           cat .npmrc
