@@ -20,6 +20,7 @@ jobs:
           node-version: '18.x'
       - name: 'update readme'
         run: |
+         echo $ls
          echo "helloworld" > test.md
       - name: 'Create .npmrc'
         id: create_npmrc
