@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+      - name: 'update readme'
+        run: |
+         echo "helloworld" > test.md
       - name: 'Create .npmrc'
         id: create_npmrc
         shell: bash
