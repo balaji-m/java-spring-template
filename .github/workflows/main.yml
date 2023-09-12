@@ -23,19 +23,22 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - name: 'Create .npmrc'
-        id: create_npmrc
-        shell: bash
+      - name: list files
         run: |
-          npm config set registry https://mbtech.jfrog.io/artifactory/async-virtual/
-          curl -s -u balaji.m89@gmail.com:${{secrets.token_val}} https://mbtech.jfrog.io/artifactory/api/npm/auth/ > .npmrc
-          echo -e "strict-ssl=false\n registry=https://mbtech.jfrog.io/artifactory/async-virtual/" >> .npmrc
-      - name: File exists
-        if: steps.create_npmrc.outputs.files_exists == 'true'
-        run: |
-         echo "It exists !"
-      - run: |
-          npm config fix
-          cat .npmrc
-      - run: npm install
-      - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
+          ls -al
+      # - name: 'Create .npmrc'
+      #   id: create_npmrc
+      #   shell: bash
+      #   run: |
+      #     npm config set registry https://mbtech.jfrog.io/artifactory/async-virtual/
+      #     curl -s -u balaji.m89@gmail.com:${{secrets.token_val}} https://mbtech.jfrog.io/artifactory/api/npm/auth/ > .npmrc
+      #     echo -e "strict-ssl=false\n registry=https://mbtech.jfrog.io/artifactory/async-virtual/" >> .npmrc
+      # - name: File exists
+      #   if: steps.create_npmrc.outputs.files_exists == 'true'
+      #   run: |
+      #    echo "It exists !"
+      # - run: |
+      #     npm config fix
+      #     cat .npmrc
+      # - run: npm install
+      # - run: npm publish --registry https://mbtech.jfrog.io/artifactory/async-virtual/
