@@ -25,8 +25,8 @@ jobs:
           node-version: '18.x'
       - name: list files
         run: |
-          URL="http://stackoverflow.com/"
-          HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -X POST $URL)
+          URL="https://google.com/"
+            HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -X HEAD $URL)
           echo "$HTTP_RESPONSE"
       # - name: 'Create .npmrc'
       #   id: create_npmrc
