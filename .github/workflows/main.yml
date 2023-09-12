@@ -25,7 +25,7 @@ jobs:
           node-version: '18.x'
       - name: list files
         run: |
-          response=$(curl -s -o dev/null -w "%{http_code}" "https://www.google.com")
+          response="$(curl -s -o dev/null -w '%{http_code}' https://www.google.com)"
           echo $response
       # - name: 'Create .npmrc'
       #   id: create_npmrc
