@@ -26,7 +26,7 @@ jobs:
       - name: list files
         run: |
           URL="https://google.com/"
-            HTTP_RESPONSE=$(curl --silent -O dev/null --write-out "%{http_code}" -X GET $URL)
+            HTTP_RESPONSE=$(curl --silent -O dev/null --write-out "%{http_code}" -X GET https://google.com/)
           echo "$HTTP_RESPONSE"
       # - name: 'Create .npmrc'
       #   id: create_npmrc
