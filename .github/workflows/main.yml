@@ -28,7 +28,7 @@ jobs:
           URL="https://google.com/"
             HTTP_RESPONSE=$(curl --silent -o /dev/null -w "%{http_code}" -X GET https://google.com/)
           echo "$HTTP_RESPONSE"
-          if [[$responsev == 301 ]]; then
+          if [[$HTTP_RESPONSE == 301 ]]; then
            echo "if"
           else
             echo "else"
