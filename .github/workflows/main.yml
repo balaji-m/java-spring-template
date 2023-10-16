@@ -21,18 +21,18 @@ jobs:
           echo "helloworld" > readme.md
       - name: 'json merge'
         run: |
-        
-         json_data1='{
-          "email":"test",
-          "alerts": ["alert1", "alert2"]
-         }'
-        
-          json_data2='{
-            "alerts": ["alert3", "alert4"]
+          json_data='{
+            "email": "test",
+            "alerts": ["alert1", "alert2"]
           }'
-        
-          alerts=$(echo "$json_data" | jq -r '.alerts[]')
-          echo "$alerts"
+          
+          # Use jq to parse and assign the JSON to a variable
+          email=$(echo "$json_data" | jq -r '.email')
+          alerts=($(echo "$json_data" | jq -r '.alerts[]'))
+          
+          # Print the values to verify
+          echo "Email: $email"
+          echo "Alerts: ${alerts[@]}"
       # - name: Use Node.js
       #   uses: actions/setup-node@v3
       #   with:
